@@ -1,21 +1,24 @@
 class Animal {
-    constructor(name, species) {
-        this.name = name;
-        this.species = species;
-        this.hunger = 50;
+  constructor(name, species) {
+    this.name = name;
+    this.species = species;
+    this._hunger = 50; // Internal state (protected by _)
+  }
+
+  makeSound() {
+    console.log(`${this.name} makes a sound...`);
+  }
+
+  eat() {
+    // this._hunger = this._hunger - 10;
+    // console.log(
+    //   `${this.name} the ${this.species} ate. Hunger is now ${this._hunger}`,
+    // );
+    if (this._hunger <= 0) {
+      console.log(`${this.name} is already full!`);
+    } else {
+      console.log(`${this.name} ate. Hunger is now ${this._hunger}`);
     }
-    makeSound(sound) {
-        console.log(`${this.name} says:${sound}`);
-    }
-    eat() {
-        if (this._hunger > 0) {
-            (this._hunger -= 10)
-            console.log(`${this.name} the ${this.species} ate. Hunger is now decreasing by 10 : Hunger = ${this._hunger}`)
-        } else {
-            console.log(`${this.name} the ${this.species} is now full.`)
-        }
-    }
-    rename(name) {
-        this.name = name
-    }
+  }
 }
+module.exports = Animal;

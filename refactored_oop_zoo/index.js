@@ -1,15 +1,21 @@
-const myZoo = new Zoo("The JS Ternimal Zoo");
+// index mean entry point = the door
+// Execution = call another class
+const Zoo = require("./Zoo.js"); // importแล้ว  export ด้วย
+const Animal = require("./Animal.js"); // importแล้ว  export ด้วย
+const Bird = require("./Bird.js"); // importแล้ว  export ด้วย
+const Mammal = require("./Mammal.js"); // importแล้ว  export ด้วย
 
-//Create instances
-const leo = new Animal("Leo","Lion")
-const zazu = new Bird("Zazu","Hornbill","2 feet")
-const baloo = new Mammal("Baloo","Bear","brown")
+const myZoo = new Zoo("The JS Terminal Zoo");
 
-//Add them to the zoo
+// create instances of class Animal, Mammal and/or Bird
+const leo = new Animal("Leo", "Lion");
+const zazu = new Bird("Zazu", "Hornbill", "2 feet");
+const baloo = new Mammal("Baloo", "Bear", "Brown");
+
+// console.log(baloo);
 
 myZoo.addAnimal(leo);
 myZoo.addAnimal(zazu);
 myZoo.addAnimal(baloo);
 
-//Run the routine
 myZoo.showAllAnimals();
