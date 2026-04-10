@@ -109,6 +109,20 @@ checkAge(20)
 
 const calArea = (width) =>{
     return new Promise((resolvem,reject)=>{
-            
+
     })
 }
+
+
+async function sayhello(str) {
+   
+    
+
+    if (!response.ok) {
+        throw new Error("Could not fetch data");
+    }
+
+    return await response.json();
+
+}
+
